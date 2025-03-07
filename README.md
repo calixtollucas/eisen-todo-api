@@ -6,15 +6,25 @@
 
 <img src="imagem.png" alt="Exemplo imagem">
 
-> Linha adicional de texto informativo sobre o que o projeto faz. Sua introdução deve ter cerca de 2 ou 3 linhas. Não exagere, as pessoas não vão ler.
+> O Eisen's TODO se trata de um gerenciador de tarefas simples com o 
+diferencial de possuir nativamente uma classificação e ordenação com base na tabela de Eisenhower
+
+### Diagramas
+Abaixo estão os diagramas que modelaram o projeto:
+
+#### Diagrama Entidade Relacionamento (DER)
+<img src="./diagrams/DER.png" alt="Diagrama de Entidade Relacionamento">
+
+#### Diagrama de Classes
+<img src="./diagrams/Diagrama_de_Classes.png" alt="Diagrama de classes">
 
 ### Ajustes e melhorias
 
 O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas para as seguintes tarefas:
 
-- [x] Modelagem e Implementação do Banco de Dados
-- [x] Configuração Inicial da Aplicação
-- [x] Autenticação & Autorização
+- [ ] Modelagem e Implementação do Banco de Dados
+- [ ] Configuração Inicial da Aplicação
+- [ ] Autenticação & Autorização
 - [ ] Endpoints
 - [ ] Swagger
 
@@ -22,29 +32,30 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 
 Antes de começar, verifique se você atendeu aos seguintes requisitos:
 
-- Você instalou a versão mais recente de `<linguagem / dependência / requeridos>`
-- Você tem uma máquina `<Windows / Linux / Mac>`. Indique qual sistema operacional é compatível / não compatível.
-- Você leu `<guia / link / documentação_relacionada_ao_projeto>`.
+- Você possui instalado as seguintes dependências:
+  - Git
+  - Docker
+  - Postman / Insomnia
+- Você tem uma máquina Linux, Windows (com WSL) ou MAC. Indique qual sistema operacional é compatível / não compatível.
+- Você leu todo o README do projeto e o guia de instalação.
 
-## 🚀 Instalando <nome_do_projeto>
+## 🚀 Instalando a API do Eisen's TODO
 
-Para instalar o <nome_do_projeto>, siga estas etapas:
+Para instalar o Eisen's TODO, siga estas etapas:
 
-Linux e macOS:
-
+Abra um terminal no local que deseja e clone este projeto para sua máquina:
 ```
-<comando_de_instalação>
-```
-
-Windows:
-
-```
-<comando_de_instalação>
+git clone https://github.com/calixtollucas/eisen-todo-api.git
 ```
 
-## ☕ Usando <nome_do_projeto>
+Após clonado, abra um terminal dentro da pasta do projeto e execute a aplicação usando
+```
+docker compose up -d
+```
 
-Para usar <nome_do_projeto>, siga estas etapas:
+## ☕ Usando Eisen's TODO
+
+Para usar Eisen's TODO, siga estas etapas:
 
 ```
 <exemplo_de_uso>
