@@ -1,0 +1,33 @@
+name: eisen-todo
+
+services:
+  app-container:
+    user: root
+    build:
+      context: ./app_container
+      dockerfile: Dockerfile 
+    volumes:
+      - ..:/workspace
+    command: sleep infinity
+    depends_on:
+      - postgres
+    networks:
+      - eisen-net
+  postgres:
+    image: postgres:17-alpine
+    restart: unless-stopped
+    volumes:
+      - eisentodo-db-data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: eisentodo
+      POSTGRES_PASSWORD: eisendb123
+      POSTGRES_DB: eisentodo-db
+    networks:
+      - eisen-net
+
+volumes:
+  eisentodo-db-data:
+networks:
+  eisen-net:
