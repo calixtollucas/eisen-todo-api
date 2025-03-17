@@ -15,7 +15,6 @@ services:
       - eisen-net
   postgres:
     image: postgres:17-alpine
-    restart: unless-stopped
     volumes:
       - eisentodo-db-data:/var/lib/postgresql/data
     ports:
