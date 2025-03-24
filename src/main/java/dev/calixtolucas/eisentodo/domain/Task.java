@@ -36,4 +36,22 @@ public class Task {
     public User getUser() {
         return user;
     }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setCompletionDate(LocalDate completionDate) {
+        this.completionDate = completionDate;
+    }
+
+    public void setIsImportant(Boolean isImportant) {
+        this.isImportant = isImportant;
+    }
+
+    public void setIsUrgent(Boolean isUrgent) {
+        this.isUrgent = isUrgent;
+    }
+
+    
 }
