@@ -1,4 +1,4 @@
-package dev.calixtolucas.eisentodo.application.useCases.task;
+package dev.calixtolucas.eisentodo.application.useCases.interfaces.task;
 
 public interface DeleteTaskUseCase {
 

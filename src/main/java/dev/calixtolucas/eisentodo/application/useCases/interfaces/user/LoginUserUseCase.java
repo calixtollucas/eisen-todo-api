@@ -1,4 +1,4 @@
-package dev.calixtolucas.eisentodo.application.useCases.user;
+package dev.calixtolucas.eisentodo.application.useCases.interfaces.user;
 
 import dev.calixtolucas.eisentodo.application.outputs.LoginOutput;
 
