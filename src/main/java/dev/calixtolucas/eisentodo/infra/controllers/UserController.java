@@ -12,19 +12,22 @@ import dev.calixtolucas.eisentodo.application.useCases.interfaces.user.LoginUser
 import dev.calixtolucas.eisentodo.domain.User;
 import dev.calixtolucas.eisentodo.infra.dtos.user.CreateUserInputDto;
 import dev.calixtolucas.eisentodo.infra.mappers.UserMapper;
+import org.springframework.web.bind.annotation.PostMapping;
+
 
 @RestController
 @RequestMapping(value = "/api/v1/user")
 public class UserController {
 
     private CreateUserUseCase createUserUseCase;
-    private LoginUserUseCase loginUserUseCase;
+    //private LoginUserUseCase loginUserUseCase;
 
-    public UserController(CreateUserUseCase createUserUseCase, LoginUserUseCase loginUserUseCase) {
+    public UserController(CreateUserUseCase createUserUseCase) {
         this.createUserUseCase = createUserUseCase;
-        this.loginUserUseCase = loginUserUseCase;
+        //this.loginUserUseCase = loginUserUseCase;
     }
-
+    
+    @PostMapping
     public ResponseEntity<String> createUser(@RequestBody CreateUserInputDto userInputDto){
 
         //mapeia dto para usuário

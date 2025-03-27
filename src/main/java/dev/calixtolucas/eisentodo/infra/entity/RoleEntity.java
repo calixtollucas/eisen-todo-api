@@ -15,11 +15,22 @@ import jakarta.persistence.Table;
 public class RoleEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "role_id")
     private Integer id;
 
-    @Enumerated(value = EnumType.STRING)
     @Column(name = "role_name")
+    @Enumerated(value = EnumType.STRING)
     private RoleUser roleName;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public RoleUser getRoleName() {
+        return roleName;
+    }
+
+    
 
 }
