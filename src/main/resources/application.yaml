@@ -7,3 +7,8 @@ spring:
     url: jdbc:postgresql://postgres:5432/eisentodo-db
     username: eisentodo
     password: eisendb123
+
+api:
+  jwt:
+    privatekey: classpath:keys/private.key
+    publickey: classpath:keys/public.pub

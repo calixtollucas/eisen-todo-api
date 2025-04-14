@@ -26,4 +26,8 @@ public class User {
         return role;
     }
 
+    public void setPassword(String password){
+        this.password = password;
+    }
+
 }

@@ -2,6 +2,7 @@ package dev.calixtolucas.eisentodo.infra.gatewaysImplementations;
 
 import java.util.Optional;
 
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import dev.calixtolucas.eisentodo.adapters.gateways.user.CreateUserGateway;
@@ -18,11 +19,14 @@ public class CreateUserGatewayImpl implements CreateUserGateway{
 
     private UserEntityRepository userEntityRepository;
     private RoleEntityRepository roleEntityRepository;
-
+    private PasswordEncoder passwordEncoder;
     
-    public CreateUserGatewayImpl(UserEntityRepository userEntityRepository, RoleEntityRepository roleEntityRepository) {
+    public CreateUserGatewayImpl(UserEntityRepository userEntityRepository,
+     RoleEntityRepository roleEntityRepository,
+     PasswordEncoder passwordEncoder) {
         this.userEntityRepository = userEntityRepository;
         this.roleEntityRepository = roleEntityRepository;
+        this.passwordEncoder = passwordEncoder;
     }
 
 
@@ -32,6 +36,11 @@ public class CreateUserGatewayImpl implements CreateUserGateway{
         try{
             //criando userEntity
             Optional<RoleEntity> roleEntity = roleEntityRepository.findByRoleName(user.getRole());
+            
+            //criptografa senha
+            String encodedPassword = passwordEncoder.encode(user.getPassword());
+            user.setPassword(encodedPassword);
+
             UserEntity userToBeSaved = UserMapper.toEntity(user, roleEntity.get());
 
             //salva no banco
